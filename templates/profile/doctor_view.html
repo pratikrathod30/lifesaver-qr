@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<section class="profile-section">
+
+<div class="hero emergency-hero">
+
+<div class="hero-text">
+
+<h1>🚨 Emergency Medical Profile</h1>
+
+<p>Critical patient information</p>
+
+</div>
+
+</div>
+
+<div class="features" style="text-align:left;margin-top:40px;">
+
+<div class="feature-grid">
+
+<div class="feature-card">
+
+<h3>👤 Personal Information</h3>
+
+<p><strong>Name:</strong> {{ profile.full_name }}</p>
+
+<p><strong>Blood Group:</strong> {{ profile.blood_group }}</p>
+
+<p><strong>Allergies:</strong> {{ profile.allergies|default:"None" }}</p>
+
+<p><strong>Chronic Diseases:</strong> {{ profile.diseases|default:"None" }}</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>📞 Emergency Contact</h3>
+
+<p><strong>Contact:</strong> {{ profile.emergency_contact }}</p>
+
+<a href="tel:{{ profile.emergency_contact }}" class="btn-primary">
+Call Emergency Contact
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/emergency.css' %}">
+<script src="{% static 'js/emergency.js' %}" defer></script>
+
+<section class="profile-section">
+
+<div class="emergency-hero">
+
+<h1>🚨 Emergency Medical Profile</h1>
+<p>Critical patient information for medical professionals</p>
+
+</div>
+
+
+<div class="profile-container">
+
+<div class="profile-card">
+
+<h3>👤 Personal Information</h3>
+
+<p><strong>Name:</strong> {{ profile.full_name }}</p>
+<p><strong>Blood Group:</strong> {{ profile.blood_group }}</p>
+<p><strong>Allergies:</strong> {{ profile.allergies|default:"None" }}</p>
+<p><strong>Diseases:</strong> {{ profile.diseases|default:"None" }}</p>
+
+</div>
+
+
+<div class="profile-card">
+
+<h3>📞 Emergency Contact</h3>
+
+<p><strong>Contact:</strong> {{ profile.emergency_contact }}</p>
+
+<a href="tel:{{ profile.emergency_contact }}" class="call-btn">
+Call Emergency Contact
+</a>
+
+</div>
+
+
+<div class="profile-card hospital-card">
+
+<h3>🏥 Nearby Hospitals</h3>
+
+<div id="loaderBox" class="loader-box">
+
+<div class="loader"></div>
+<p>Finding nearby hospitals...</p>
+
+</div>
+
+<ul id="hospitalList" class="hospital-list">
+
+{% for h in hospitals %}
+<li>{{ h }}</li>
+{% endfor %}
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+window.profileUUID="{{ profile.uuid }}";
+</script>
+
+{% endblock %}

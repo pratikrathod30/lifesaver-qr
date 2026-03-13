@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LifeSaver QR</title>
+
+<link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/loader.css' %}">
+<link rel="stylesheet" href="{% static 'css/toast.css' %}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="site-wrapper">
+
+<div id="loader">
+<div class="spinner"></div>
+</div>
+
+<header class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">
+<img src="{% static 'images/favicon.png' %}" width="26">
+<span>LifeSaver QR</span>
+</div>
+
+<nav class="nav-links" id="navLinks">
+
+<a href="/">Home</a>
+
+<a href="/accounts/login/" class="nav-login">Login</a>
+
+<a href="/accounts/register/" class="nav-register">Register</a>
+
+</nav>
+
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</div>
+
+</header>
+
+<div class="toast-container">
+
+{% if messages %}
+{% for message in messages %}
+
+<div class="toast {{ message.tags }}">
+{{ message }}
+</div>
+{% endfor %}
+{% endif %}
+
+</div>
+
+<main class="main-content">
+
+{% block content %}
+{% endblock %}
+
+</main>
+
+<footer class="footer">
+
+<p>© 2026 LifeSaver QR • Emergency Medical QR System</p>
+
+</footer>
+
+</div>
+
+<script src="{% static 'js/base.js' %}"></script>
+
+<script src="{% static 'js/home.js' %}"></script>
+
+<script src="{% static 'js/toast.js' %}"></script>
+
+<script src="{% static 'js/loader.js' %}"></script>
+
+</body>
+</html>

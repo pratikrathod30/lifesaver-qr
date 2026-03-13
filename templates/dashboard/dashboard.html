@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+<div class="dashboard-wrapper">
+
+<h2 class="dashboard-title">Dashboard</h2>
+
+<div class="dashboard-grid">
+
+<div class="card profile-card">
+
+<h3>Medical Profile</h3>
+
+{% if profile %}
+
+<p><strong>Name:</strong> {{ profile.full_name }}</p>
+<p><strong>Blood Group:</strong> {{ profile.blood_group }}</p>
+<p><strong>Emergency:</strong> {{ profile.emergency_contact }}</p>
+
+<div class="btn-group">
+<a href="/profile/edit/" class="btn">Edit Profile</a>
+<a href="/emergency/download/" class="btn">Download QR</a>
+</div>
+
+{% else %}
+
+<a href="/profile/create/" class="btn">Create Profile</a>
+
+{% endif %}
+
+</div>
+
+
+{% if qr %}
+
+<div class="card qr-card">
+
+<h3>Your QR Code</h3>
+
+<img src="{{ qr.qr_image.url }}" class="qr-img">
+
+<a href="/emergency/download/" class="btn">Download QR</a>
+
+</div>
+
+{% endif %}
+
+
+<div class="card analytics-card">
+
+<h3>Scan Analytics</h3>
+
+<p>Total Scans: {{ total_scans }}</p>
+
+{% if last_scan %}
+<p>Last Scan: {{ last_scan.timestamp }}</p>
+<p>Location: {{ last_scan.location }}</p>
+{% endif %}
+
+</div>
+
+
+<div class="card reports-card">
+
+<h3>Medical Reports</h3>
+
+<div class="reports-scroll">
+
+{% if reports %}
+
+{% for r in reports %}
+
+<div class="report-row">
+<a href="{{ r.report_file.url }}">View</a>
+<a href="/profile/delete-report/{{ r.id }}/" class="delete">Delete</a>
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<p>No reports uploaded</p>
+
+{% endif %}
+
+</div>
+
+<a href="/profile/upload-report/" class="btn upload-btn">Upload Report</a>
+
+</div>
+
+
+<div class="card scan-card">
+
+<h3>Scan History</h3>
+
+<div class="scan-scroll">
+
+<div class="scan-header">
+<span>IP</span>
+<span>Location</span>
+<span>Time</span>
+</div>
+
+{% if scans %}
+
+{% for scan in scans %}
+
+<div class="scan-row">
+
+<span class="scan-ip">{{ scan.ip_address }}</span>
+<span class="scan-location">{{ scan.location }}</span>
+<span class="scan-time">{{ scan.timestamp }}</span>
+
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<p>No scans yet</p>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

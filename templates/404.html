@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/404.css' %}">
+<script src="{% static 'js/404.js' %}" defer></script>
+
+<section class="error-page">
+
+<div class="error-container">
+
+<h1 class="error-code">404</h1>
+
+<h2 class="error-title">Page Not Found</h2>
+
+<p class="error-text">
+The page you are looking for does not exist or may have been moved.
+</p>
+
+<a href="/" class="error-btn">Go Home</a>
+
+</div>
+
+</section>
+
+{% endblock %}

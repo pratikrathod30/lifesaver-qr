@@ -1,0 +1,161 @@
+.hero-new{
+width:100%;
+background:linear-gradient(135deg,#0f172a,#020617);
+color:white;
+padding:100px 20px;
+}
+
+.hero-container{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero-left h1{
+font-size:52px;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.hero-left p{
+font-size:18px;
+opacity:0.9;
+margin-bottom:30px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn-main{
+background:#10b981;
+color:white;
+padding:14px 28px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
+
+.btn-outline{
+border:2px solid #10b981;
+color:#10b981;
+padding:14px 28px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
+}
+
+.hero-right{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.info-card{
+background:#1f2937;
+padding:25px;
+border-radius:10px;
+}
+
+.info-card h3{
+color:#10b981;
+margin-bottom:8px;
+}
+
+.features-new{
+padding:100px 20px;
+}
+
+.features-new h2{
+text-align:center;
+font-size:34px;
+margin-bottom:50px;
+}
+
+.feature-grid{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
+
+.feature-box{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+text-align:center;
+}
+
+.workflow{
+padding:100px 20px;
+}
+
+.workflow h2{
+text-align:center;
+font-size:34px;
+margin-bottom:50px;
+}
+
+.workflow-grid{
+max-width:1000px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+}
+
+.workflow-step{
+background:white;
+padding:25px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.workflow-step span{
+display:inline-block;
+width:40px;
+height:40px;
+line-height:40px;
+border-radius:50%;
+background:#10b981;
+color:white;
+margin-bottom:10px;
+}
+
+@media(max-width:900px){
+
+.hero-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-right{
+max-width:500px;
+margin:auto;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-left h1{
+font-size:36px;
+}
+
+.hero-left p{
+font-size:16px;
+}
+
+}

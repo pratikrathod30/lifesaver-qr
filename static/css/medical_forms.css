@@ -1,0 +1,89 @@
+.form-page{
+display:flex;
+justify-content:center;
+align-items:flex-start;
+padding:40px 15px;
+background:linear-gradient(135deg,#0f172a,#020617);
+}
+
+.form-container{
+width:100%;
+max-width:520px;
+margin:auto;
+}
+
+.form-card{
+background:white;
+padding:28px;
+border-radius:12px;
+box-shadow:0 8px 22px rgba(0,0,0,0.15);
+}
+
+.form-container h2{
+text-align:center;
+margin-bottom:22px;
+font-size:24px;
+font-weight:600;
+color:#0f172a;
+}
+
+.form-card p{
+display:flex;
+flex-direction:column;
+margin-bottom:16px;
+font-size:14px;
+}
+
+.form-card label{
+margin-bottom:5px;
+font-weight:500;
+color:#374151;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea{
+padding:10px;
+border-radius:6px;
+border:1px solid #e5e7eb;
+font-size:14px;
+transition:0.25s;
+}
+
+.form-card input:focus,
+.form-card select:focus,
+.form-card textarea:focus{
+outline:none;
+border-color:#10b981;
+box-shadow:0 0 0 2px rgba(16,185,129,0.15);
+}
+
+.form-btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#10b981;
+color:white;
+font-size:15px;
+font-weight:500;
+cursor:pointer;
+margin-top:10px;
+transition:0.25s;
+}
+
+.form-btn:hover{
+background:#059669;
+}
+
+@media(max-width:600px){
+
+.form-card{
+padding:22px;
+}
+
+.form-container h2{
+font-size:20px;
+}
+
+}

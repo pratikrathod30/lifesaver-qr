@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+<script src="{% static 'js/auth.js' %}" defer></script>
+
+<section class="auth-page">
+
+<div class="auth-card">
+
+<h2>Create Account</h2>
+
+<form method="post" class="auth-form">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button type="submit" class="auth-btn">Register</button>
+
+</form>
+
+<p class="auth-switch">
+Already have an account?
+<a href="/accounts/login/">Login</a>
+</p>
+
+</div>
+
+</section>
+
+{% endblock %}
