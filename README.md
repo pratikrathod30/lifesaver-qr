@@ -8,7 +8,7 @@
 ![Django](https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white)
 ![DRF](https://img.shields.io/badge/Django_REST_Framework-ff1709?style=flat&logo=django&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white)
-![SQL](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
 
 </div>
 
@@ -41,7 +41,7 @@
 |-------|-----------|
 | **Backend** | Python, Django 5.x, Django REST Framework |
 | **Frontend** | HTML5, CSS3, JavaScript, Bootstrap |
-| **Database** | SQLite3 (dev) / PostgreSQL (production) |
+| **Database** | MySQL |
 | **APIs** | REST APIs, Geolocation API, IP Tracking |
 | **QR Engine** | Python QR Libraries |
 | **Auth** | Django Auth + Role-Based Access Control |
@@ -54,6 +54,7 @@
 ### Prerequisites
 
 - Python 3.10+
+- MySQL
 - Git
 
 ### Installation
